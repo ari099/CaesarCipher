@@ -84,6 +84,7 @@ class Ui(QtWidgets.QMainWindow):
       user_text = self.textbox.toPlainText()
       if len(user_text) > 0:
          self.cipherTextOutput.setText(encryptString(user_text, key))
+      else: self.cipherTextOutput.setText("Cipher text should appear here....")
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
