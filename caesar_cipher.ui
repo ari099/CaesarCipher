@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>527</width>
-    <height>125</height>
+    <height>81</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CaesarCipher</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSlider" name="horizontalSlider">
+   <widget class="QSlider" name="CipherDial">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -27,7 +27,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="UserText">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -39,21 +39,14 @@
     <property name="font">
      <font>
       <family>Courier New</family>
+      <pointsize>10</pointsize>
      </font>
+    </property>
+    <property name="placeholderText">
+     <string>Enter text, then turn the dial</string>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>527</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
