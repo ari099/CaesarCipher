@@ -36,29 +36,6 @@ def encryptString(text, key):
    return text # Return the cipher text
 
 
-
-class Queue(object):
-   """
-   Simple queue data structure
-   """
-   def __init__(self, arr):
-      self.values = arr
-   
-   def __repr__(self):
-      return str(self.values)
-   
-   def __len__(self):
-      return len(self.values)
-   
-   def enqueue(self, value):
-      self.values.insert(0, value)
-   
-   def dequeue(self):
-      return self.values.pop()
-   
-   def peek(self):
-      return self.values[-1:][0]
-
 class Ui(QtWidgets.QMainWindow):
    def __init__(self):
       super(Ui, self).__init__()
