@@ -70,10 +70,14 @@ class Ui(QtWidgets.QMainWindow):
 
       # Find the textbox labeled with "UserInput"
       self.textbox = self.findChild(QtWidgets.QTextEdit, 'UserText')
+      self.textbox.textChanged.connect(self.userInputChanged)
       self.alphabet = list(string.ascii_lowercase)
 
       # Find the label labeled (hehe) with "CipherTextOutput"
       self.cipherTextOutput = self.findChild(QtWidgets.QLabel, 'CipherTextOutput')
+
+      # Find the label labeled (hehe) with "SliderNumber"
+      self.sliderNumber = self.findChild(QtWidgets.QLabel, 'SliderNumber')
 
       self.show()
    
@@ -82,9 +86,16 @@ class Ui(QtWidgets.QMainWindow):
       # self.textbox.setText(str(self.slider.value()))
       key = self.slider.value()
       user_text = self.textbox.toPlainText()
+      self.sliderNumber.setText("Key: " + str(key))
       if len(user_text) > 0:
          self.cipherTextOutput.setText(encryptString(user_text, key))
-      else: self.cipherTextOutput.setText("Cipher text should appear here....")
+   
+   def userInputChanged(self):
+      key = self.slider.value()
+      user_text = self.textbox.toPlainText()
+      if len(user_text) == 0:
+          self.cipherTextOutput.setText("Cipher text should appear here....")
+      else: self.cipherTextOutput.setText(encryptString(user_text, key))
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
