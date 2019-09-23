@@ -49,10 +49,14 @@ class Ui(QtWidgets.QMainWindow):
          isUpperCase = False
          # Find the letter character in the cipher alphabet and get it's index
          if text[i].lower() in alphabet:
+            # Is the character at index "i" uppercase or lowercase?
             if text[i].isupper(): isUpperCase = True
             index = alphabet.index(text[i].lower()) # Get the index used for it in the alphabet list
             text_list = list(text) # Turn the text into a list to manipulate it
-            text_list[i] = cipher_alphabet[index] if isUpperCase == False else cipher_alphabet[index].upper() # Replace the letter with the cipher alphabet equivalent
+            
+            # Determine if the original character was uppercase or lowercase from the variable "isUpperCase"
+            # Replace the letter with the cipher alphabet equivalent
+            text_list[i] = cipher_alphabet[index] if isUpperCase == False else cipher_alphabet[index].upper()
             text = "".join(text_list) # Turn the text back into a string
       
       return text # Return the cipher text
