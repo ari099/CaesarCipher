@@ -6,8 +6,8 @@ class Ui(QtWidgets.QMainWindow):
       super(Ui, self).__init__()
       uic.loadUi('caesar_cipher.ui', self)
 
-      # Find the slider with the name "CipherDial"
-      self.slider = self.findChild(QtWidgets.QSlider, 'CipherDial')
+      # Find the slider with the name "EncryptionSlider"
+      self.slider = self.findChild(QtWidgets.QSlider, 'EncryptionSlider')
       self.slider.valueChanged.connect(self.sliderMoved)
 
       # Find the textbox labeled with "UserInput"
